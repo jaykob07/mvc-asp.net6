@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "envia", "envia\envia.csproj", "{61324D0D-0C6A-4EA0-BB92-B394139D2E00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61324D0D-0C6A-4EA0-BB92-B394139D2E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61324D0D-0C6A-4EA0-BB92-B394139D2E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61324D0D-0C6A-4EA0-BB92-B394139D2E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61324D0D-0C6A-4EA0-BB92-B394139D2E00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD215FDD-8F25-4CC2-930E-2E7489C48EA4}
+	EndGlobalSection
+EndGlobal

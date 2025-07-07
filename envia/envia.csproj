@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="9.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Auth\" />
+    <None Remove="Views\Registro\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Registro\" />
+  </ItemGroup>
+</Project>

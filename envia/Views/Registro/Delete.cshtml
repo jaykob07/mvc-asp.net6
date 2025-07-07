@@ -1,0 +1,19 @@
+﻿@model envia.Models.Registro
+
+<h2>Eliminar Registro</h2>
+
+<h4>¿Estás seguro que deseas eliminar este registro?</h4>
+<div>
+    <strong>ID:</strong> @Model.Id<br />
+    <strong>Descripción:</strong> @Model.Nombre<br />
+    <strong>Descripción:</strong> @Model.Apellido<br />
+    <strong>Descripción:</strong> @Model.Cargo<br />
+
+    <strong>Fecha:</strong> @Model.FechaCreacion.ToString("yyyy-MM-dd HH:mm:ss")<br />
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger mt-2">Confirmar Eliminación</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancelar</a>
+</form>
