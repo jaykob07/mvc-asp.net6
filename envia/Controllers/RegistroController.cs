@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 using envia.Models;
-using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace envia.Controllers
+namespace MiApp.Controllers
 {
     public class RegistroController : Controller
     {
@@ -48,25 +42,43 @@ namespace envia.Controllers
         public IActionResult Edit(int id)
         {
             if (!EstaAutenticado()) return RedirectToAction("Login", "Auth");
-            return View(_data.GetById(id));
+            var registro = _data.GetById(id);
+            if (registro == null)
+            {
+                return NotFound();
+            }
+            return View(registro);
         }
 
         [HttpPost]
         public IActionResult Edit(Registro r)
         {
+            Console.WriteLine(">> POST Edit llamado");
+            Console.WriteLine($">> ID recibido: {r.Id}");
+            Console.WriteLine($">> Nombre: {r.Nombre}, Apellido: {r.Apellido}, Cargo: {r.Cargo}");
+
             if (!EstaAutenticado()) return RedirectToAction("Login", "Auth");
+
             if (ModelState.IsValid)
             {
+                Console.WriteLine(">> ModelState es válido, actualizando...");
                 _data.Update(r);
                 return RedirectToAction(nameof(Index));
             }
+
+            Console.WriteLine(">> ModelState inválido");
             return View(r);
         }
 
         public IActionResult Delete(int id)
         {
             if (!EstaAutenticado()) return RedirectToAction("Login", "Auth");
-            return View(_data.GetById(id));
+            var registro = _data.GetById(id);
+            if (registro == null)
+            {
+                return NotFound();
+            }
+            return View(registro);
         }
 
         [HttpPost, ActionName("Delete")]

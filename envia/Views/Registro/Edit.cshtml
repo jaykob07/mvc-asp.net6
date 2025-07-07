@@ -1,7 +1,8 @@
-﻿
-@model envia.Models.Registro
+﻿@model envia.Models.Registro
 
 <h2>Editar Registro</h2>
+
+<p><strong>ID cargado en el modelo:</strong> @Model.Id</p>
 
 <form asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
@@ -22,7 +23,10 @@
         <span asp-validation-for="Cargo" class="text-danger"></span>
     </div>
 
-
     <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
     <a asp-action="Index" class="btn btn-secondary mt-2">Volver a la lista</a>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
